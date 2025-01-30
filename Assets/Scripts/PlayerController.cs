@@ -66,7 +66,6 @@ public class PlayerController : MonoBehaviour
         {
             winTextObject.gameObject.SetActive(true);
             winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
-            Time.timeScale = 0;
             Destroy(gameObject);
         }
     }

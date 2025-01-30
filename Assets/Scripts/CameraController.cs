@@ -1,9 +1,9 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
- public GameObject player;
-
+    public GameObject player;
     private Vector3 offset;
 
     void Start()
@@ -17,6 +17,14 @@ public class CameraController : MonoBehaviour
         if (player != null)
         {
             transform.position = player.transform.position + offset;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
